@@ -9,28 +9,32 @@ const solutions = [
     icon: MessageCircle,
     title: 'Website Chatbot Agent',
     description: 'Handles instant responses and captures leads on your site with intelligent conversation flows.',
-    color: 'from-primary-400 to-accent-400'
+    color: 'from-primary-400 to-accent-400',
+    image: '/images/Wavy_Tech-20_Single-08.jpg'
   },
   {
     id: 'whatsapp-ai',
     icon: MessageSquare,
     title: 'WhatsApp AI Agent',
     description: 'Engages users 24/7 through WhatsApp for queries, booking, and support with seamless automation.',
-    color: 'from-accent-400 to-secondary-400'
+    color: 'from-accent-400 to-secondary-400',
+    image: '/images/Wavy_Tech-21_Single-04.jpg'
   },
   {
     id: 'custom-ai-agent',
     icon: Settings,
     title: 'Customized AI Agent',
     description: 'Build tailored automations for finance, billing, HR, and operations with a single intelligent agent.',
-    color: 'from-secondary-400 to-primary-400'
+    color: 'from-secondary-400 to-primary-400',
+    image: '/images/GIU AMA 255-02.jpg'
   },
   {
     id: 'helpdesk-agent',
     icon: Headphones,
     title: 'Helpdesk Agent',
     description: 'Provides real-time ticketing, issue resolution, and knowledge base assistance automatically.',
-    color: 'from-primary-400 to-secondary-400'
+    color: 'from-primary-400 to-secondary-400',
+    image: '/images/GIU AMA 255-07.jpg'
   }
 ];
 
@@ -117,41 +121,42 @@ function SolutionCard({ solution, index, isInView }: { solution: typeof solution
       />
       <Link
         to={`/solution/${solution.id}`}
-        className="group relative block h-full p-8 bg-slate-900/60 backdrop-blur-md border border-primary-500/20 rounded-2xl transition-all duration-500 hover:border-primary-500/50"
+        className="group relative block h-full overflow-hidden bg-slate-900/60 backdrop-blur-md border border-primary-500/20 rounded-2xl transition-all duration-500 hover:border-primary-500/50"
       >
         <div className="absolute inset-0 bg-gradient-to-br from-primary-500/10 via-transparent to-secondary-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
-        <div className="relative flex items-center gap-6">
+        <div className="relative h-48 overflow-hidden">
+          <img
+            src={solution.image}
+            alt={solution.title}
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-slate-900/80"></div>
+        </div>
+
+        <div className="relative p-8 flex flex-col gap-4">
           <motion.div
             className="absolute inset-x-0 -top-2 h-[1px] bg-gradient-to-r from-transparent via-primary-500/30 to-transparent opacity-0 group-hover:opacity-100"
             animate={{ opacity: [0.1, 0.4, 0.1] }}
             transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
           />
 
-          <div className="flex flex-col gap-4 flex-1">
-            <div className={`inline-flex w-fit p-4 bg-gradient-to-br ${solution.color} rounded-xl transform group-hover:rotate-6 transition-transform`}>
-              <Icon className="w-8 h-8 text-slate-900" />
-            </div>
+          <div className={`inline-flex w-fit p-4 bg-gradient-to-br ${solution.color} rounded-xl transform group-hover:rotate-6 transition-transform`}>
+            <Icon className="w-8 h-8 text-slate-900" />
+          </div>
 
-            <div>
-              <h3 className="text-2xl font-bold mb-2 bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">
-                {solution.title}
-              </h3>
+          <div>
+            <h3 className="text-2xl font-bold mb-2 bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">
+              {solution.title}
+            </h3>
 
-              <p className="text-slate-400 leading-relaxed">
-                {solution.description}
-              </p>
-            </div>
+            <p className="text-slate-400 leading-relaxed">
+              {solution.description}
+            </p>
           </div>
 
           <motion.div
-            className="hidden md:flex h-full w-px bg-gradient-to-b from-transparent via-primary-500/20 to-transparent opacity-0 group-hover:opacity-80"
-            animate={{ opacity: [0.1, 0.4, 0.1] }}
-            transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
-          />
-
-          <motion.div
-            className="hidden md:flex flex-col gap-3 text-primary-400 font-semibold tracking-wide"
+            className="hidden md:flex flex-col gap-3 text-primary-400 font-semibold tracking-wide pt-4"
             initial={{ opacity: 0, x: 12 }}
             whileHover={{ opacity: 1, x: 0 }}
           >
@@ -164,7 +169,7 @@ function SolutionCard({ solution, index, isInView }: { solution: typeof solution
             />
           </motion.div>
         </div>
-        <div className="mt-6 flex items-center gap-2 text-primary-400 font-semibold opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-2 transition-all md:hidden">
+        <div className="absolute bottom-4 left-8 flex items-center gap-2 text-primary-400 font-semibold opacity-0 group-hover:opacity-100 transform translate-x-0 group-hover:translate-x-2 transition-all md:hidden">
           Learn More
           <div className="w-6 h-0.5 bg-primary-400"></div>
         </div>

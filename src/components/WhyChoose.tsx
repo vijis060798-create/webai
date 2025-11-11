@@ -5,22 +5,26 @@ const features = [
   {
     icon: Zap,
     title: 'Real-time Automation',
-    description: 'Instant responses and actions powered by advanced AI algorithms'
+    description: 'Instant responses and actions powered by advanced AI algorithms',
+    image: '/images/Wavy_Tech-20_Single-08.jpg'
   },
   {
     icon: Shield,
     title: 'Secure APIs',
-    description: 'Enterprise-grade security with encrypted data transmission'
+    description: 'Enterprise-grade security with encrypted data transmission',
+    image: '/images/GIU AMA 255-02.jpg'
   },
   {
     icon: Wrench,
     title: 'Custom AI Workflows',
-    description: 'Tailored automation sequences designed for your unique processes'
+    description: 'Tailored automation sequences designed for your unique processes',
+    image: '/images/Wavy_Tech-21_Single-04.jpg'
   },
   {
     icon: Network,
     title: 'Multi-platform Integration',
-    description: 'Connect seamlessly with all your favorite business tools'
+    description: 'Connect seamlessly with all your favorite business tools',
+    image: '/images/GIU AMA 255-07.jpg'
   }
 ];
 
@@ -80,10 +84,19 @@ function FeatureCard({ feature, index, isInView }: { feature: typeof features[0]
       isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'
     }`}
     style={{ transitionDelay: `${index * 100}ms` }}>
-      <div className="relative h-full p-8 bg-slate-900/50 backdrop-blur-sm border border-primary-500/20 rounded-2xl hover:border-primary-500/50 transition-all">
+      <div className="relative h-full bg-slate-900/50 backdrop-blur-sm border border-primary-500/20 rounded-2xl hover:border-primary-500/50 transition-all overflow-hidden">
+        <div className="h-32 overflow-hidden">
+          <img
+            src={feature.image}
+            alt={feature.title}
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-slate-900/80"></div>
+        </div>
+
         <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
-        <div className="relative space-y-4">
+        <div className="relative p-6 space-y-4">
           <div className="inline-flex p-3 bg-gradient-to-br from-primary-500/20 to-accent-500/20 rounded-xl group-hover:scale-110 transition-transform">
             <Icon className="w-8 h-8 text-primary-400" />
           </div>

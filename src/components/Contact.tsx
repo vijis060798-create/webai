@@ -17,8 +17,14 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-32">
-      <div className="absolute inset-0 bg-gradient-to-t from-primary-950/20 to-transparent"></div>
+    <section id="contact" className="relative py-32 overflow-hidden">
+      <div className="absolute inset-0 -z-10">
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-20"
+          style={{ backgroundImage: "url('/images/8966026.jpg')" }}
+        ></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/80 to-slate-950/60"></div>
+      </div>
 
       <div className="max-w-4xl mx-auto px-4 relative">
         <div className="text-center mb-16" ref={ref}>

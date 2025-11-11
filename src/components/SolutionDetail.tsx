@@ -18,6 +18,7 @@ type SolutionDetailContent = {
     outcome: string;
   }[];
   color: string;
+  heroImage: string;
 };
 
 const solutionDetails: Record<string, SolutionDetailContent> = {
@@ -71,7 +72,8 @@ const solutionDetails: Record<string, SolutionDetailContent> = {
         outcome: 'Night-time tickets resolved without human intervention rose to 78%, keeping CSAT above 4.6/5.'
       }
     ],
-    color: 'from-primary-400 to-accent-400'
+    color: 'from-primary-400 to-accent-400',
+    heroImage: '/images/Wavy_Tech-20_Single-08.jpg'
   },
   'whatsapp-ai': {
     title: 'WhatsApp AI Agent',
@@ -123,7 +125,8 @@ const solutionDetails: Record<string, SolutionDetailContent> = {
         outcome: 'Support volume dropped 55% and customer satisfaction improved with real-time updates.'
       }
     ],
-    color: 'from-accent-400 to-secondary-400'
+    color: 'from-accent-400 to-secondary-400',
+    heroImage: '/images/Wavy_Tech-21_Single-04.jpg'
   },
   'custom-ai-agent': {
     title: 'Customized AI Agent',
@@ -175,7 +178,8 @@ const solutionDetails: Record<string, SolutionDetailContent> = {
         outcome: 'HR inquiries deflected by 72% and employee satisfaction scores climbed to 4.7/5.'
       }
     ],
-    color: 'from-secondary-400 to-primary-400'
+    color: 'from-secondary-400 to-primary-400',
+    heroImage: '/images/GIU AMA 255-02.jpg'
   },
   'helpdesk-agent': {
     title: 'Helpdesk Agent',
@@ -227,7 +231,8 @@ const solutionDetails: Record<string, SolutionDetailContent> = {
         outcome: 'Escalation handoff time dropped from 45 minutes to under five minutes with higher customer trust.'
       }
     ],
-    color: 'from-primary-400 to-secondary-400'
+    color: 'from-primary-400 to-secondary-400',
+    heroImage: '/images/GIU AMA 255-07.jpg'
   }
 };
 
@@ -328,6 +333,21 @@ export default function SolutionDetail() {
             </div>
           </motion.div>
         </div>
+
+        {/* Hero Image Section */}
+        <motion.div
+          className="relative h-96 overflow-hidden mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+        >
+          <img
+            src={solution.heroImage}
+            alt={solution.title}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-transparent to-slate-950 opacity-40"></div>
+        </motion.div>
 
         {/* Content */}
         <div className="max-w-7xl mx-auto px-4 py-12">
